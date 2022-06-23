@@ -1,5 +1,6 @@
 import React from 'react';
-import Questions from './questions/questions'
+import Questions from './questions/Questions'
+import QuestionsShow from './questions/QuestionsShow'
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Questions />
+        <QuestionsShow />
       </header>
     </div>
   );
