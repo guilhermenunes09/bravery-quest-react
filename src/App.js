@@ -1,9 +1,10 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
-import { Questions } from './questions/Questions'
-import { QuestionsShow } from './questions/QuestionsShow'
+import React from "react";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
+import { NavBar } from "./components/NavBar";
+import { QuestionsShow } from "./questions/QuestionsShow"
+import { QuestionsCreate } from "./questions/QuestionsCreate";
+import { Questions } from "./questions/Questions"
 
 
 function App() {
@@ -12,12 +13,15 @@ function App() {
       <header className="App-header">
         Teste
         <NavBar />
-        <Router>
-          <Routes>
-            <Route path="/question/:questionId" exact element={<QuestionsShow/>} />
-            <Route path="/" exact element={<Questions/>} />
-          </Routes>
-        </Router>
+        <div className="main-container">
+          <Router>
+            <Routes>
+              <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
+              <Route path="/questions/new" exact element={<QuestionsCreate />} />
+              <Route path="/" exact element={<Questions/>} />
+            </Routes>
+          </Router>
+        </div>
       </header>
     </div>
   );
