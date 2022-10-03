@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { instance } from '../services/QuestionsService';
 
 function QuestionsCreate() {
+  const refTitle = useRef(null);
+  const refQuestion = useRef(null);
+
+  function handleSave(e) {
+    e.preventDefault();
+    console.log("save form and redirect");
+    console.log(refTitle.current.value)
+    console.log(refQuestion.current.value)
+    instance.post(`questions`, {
+      questions: {
+        title: refTitle.current.value,
+        question: refQuestion.current.value
+      }
+    })
+  }
+  
   return (
     <>
      QuestionsCreate
-     <form className="w-full max-w-lg bg-blue-900 self-center">
-      <div className="flex flex-wrap -mx-3 mb-6 bg-slate-600 self-center">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 self-center">
-          <input id="questions-title" type="text" placeholder="Title" className="input-field" />
+     <form className="form-container">
+      <div className="">
+        <div class="">
+          <input ref={refTitle} id="questions-title" type="text" placeholder="Title" className="input-field" />
         </div>
-        <div class="w-full md:w-1/2 px-3">
-          <textarea className="text-area">
+        <div class="">
+          <textarea ref={refQuestion} className="text-area">
             This is a text
           </textarea>
         </div>
       </div>
+
+      <button onClick={handleSave} class="form-button-right">
+        Salvar
+      </button>
     </form>
     </>
   )
