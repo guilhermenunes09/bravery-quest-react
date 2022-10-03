@@ -7,9 +7,6 @@ function QuestionsCreate() {
 
   function handleSave(e) {
     e.preventDefault();
-    console.log("save form and redirect");
-    console.log(refTitle.current.value)
-    console.log(refQuestion.current.value)
     instance.post(`questions`, {
       questions: {
         title: refTitle.current.value,

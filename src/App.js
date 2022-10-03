@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 import { NavBar } from "./components/NavBar";
 import { QuestionsShow } from "./questions/QuestionsShow"
@@ -8,20 +8,26 @@ import { Questions } from "./questions/Questions"
 
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="App">
       <header className="App-header">
-        Teste
+        New Question
         <NavBar />
-        <div className="main-container">
-          <Router>
+        <br />
+          <div className="main-container">
+            { location.pathname === "/" &&
+              <Link to="/questions/new" class="button-new-question">
+                New Question
+              </Link>
+            }
             <Routes>
               <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
               <Route path="/questions/new" exact element={<QuestionsCreate />} />
               <Route path="/" exact element={<Questions/>} />
             </Routes>
-          </Router>
-        </div>
+          </div>
       </header>
     </div>
   );
