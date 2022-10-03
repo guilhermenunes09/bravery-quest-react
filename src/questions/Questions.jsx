@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { instance } from '../services/QuestionsService';
 
 function Questions() {
-
   const [questions, setQuestions] = useState(0);
 
-
   function handleClick() {
-    console.log("clicked")
     instance.get(`questions`)
     .then(res => {
-      console.log('res', res)
       setQuestions(res.data)
     })
   }
