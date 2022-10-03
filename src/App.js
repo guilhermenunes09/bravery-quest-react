@@ -17,7 +17,7 @@ function App() {
         <NavBar />
         <br />
           <div className="main-container">
-            { location.pathname === "/" &&
+            { location.pathname !== "/questions/new" &&
               <Link to="/questions/new" class="button-new-question">
                 New Question
               </Link>

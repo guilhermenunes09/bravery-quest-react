@@ -1,9 +1,12 @@
 import React, { useRef } from 'react';
 import { instance } from '../services/QuestionsService';
+import { useNavigate } from "react-router-dom";
 
 function QuestionsCreate() {
   const refTitle = useRef(null);
   const refQuestion = useRef(null);
+
+  const navigate = useNavigate();
 
   function handleSave(e) {
     e.preventDefault();
@@ -13,6 +16,11 @@ function QuestionsCreate() {
         question: refQuestion.current.value
       }
     })
+    .then((response) => {
+      console.log("this is the response", response)
+      navigate(`/questions/${response.data.id}`);
+
+    });
   }
   
   return (
