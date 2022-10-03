@@ -15,12 +15,17 @@ function QuestionsShow() {
 
   return (
     <>
-      <div>
-     QuestionsShow --
-     { questionId }
-     Title: -- {question.title}
-     Question: { question.question }
-     </div>
+      <div className='card'>
+        <div className='px-6 py-4'>
+          <div className='font-bold self-start text-xl mb-2 text-center'>{question.title}</div>
+          <p className='text-gray-700 text-base'>
+            {question.question}
+          </p>
+        </div>
+        <div className='self-end px-6 pt-4 pb-'>
+          <span class="tag">#photography</span>
+        </div>
+      </div>
     </>
   )
 }

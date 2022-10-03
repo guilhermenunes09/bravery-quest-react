@@ -17,16 +17,27 @@ function App() {
         <NavBar />
         <br />
           <div className="main-container">
-            { location.pathname !== "/questions/new" &&
-              <Link to="/questions/new" class="button-new-question">
-                New Question
-              </Link>
-            }
-            <Routes>
-              <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
-              <Route path="/questions/new" exact element={<QuestionsCreate />} />
-              <Route path="/" exact element={<Questions/>} />
-            </Routes>
+            <div className="col-span-full lg:col-span-3">
+              { location.pathname !== "/questions/new" &&
+                <Link to="/questions/new" class="button-new-question">
+                  New Question
+                </Link>
+              }
+            </div>
+            <div className="col-span-full lg:col-span-1">
+              
+            </div>
+            <div className="col-span-full lg:col-span-1">
+              <Routes>
+                <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
+                <Route path="/questions/new" exact element={<QuestionsCreate />} />
+                <Route path="/questions" exact element={<Questions/>} />
+                <Route path="/" exact element={<Questions/>} />
+              </Routes>
+            </div>
+            <div className="col-span-full lg:col-span-1">
+              
+            </div>
           </div>
       </header>
     </div>
