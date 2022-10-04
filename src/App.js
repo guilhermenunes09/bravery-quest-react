@@ -17,7 +17,7 @@ function App() {
         <NavBar />
         <br />
           <div className="main-container">
-            <div className="col-span-full lg:col-span-3">
+            <div className="col-span-full lg:col-span-4">
               { location.pathname !== "/questions/new" &&
                 <Link to="/questions/new" class="button-new-question">
                   New Question
@@ -27,7 +27,7 @@ function App() {
             <div className="col-span-full lg:col-span-1">
               
             </div>
-            <div className="col-span-full lg:col-span-1">
+            <div className="col-span-full lg:col-span-2">
               <Routes>
                 <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
                 <Route path="/questions/new" exact element={<QuestionsCreate />} />

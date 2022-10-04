@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { instance } from '../services/QuestionsService';
+import { useNavigate } from "react-router-dom";
 
 function Questions() {
   const [questions, setQuestions] = useState(0);
-
+  const navigate = useNavigate();
   
   useEffect(() => {
     instance.get(`questions`)
@@ -12,14 +13,19 @@ function Questions() {
     })
   },[])
 
+  function handleClick(questionId) {
+    console.log('what object', questionId)
+    navigate(`/questions/${questionId}`)
+  }
+
   return (
     <>  
       {questions && questions.map(function(question, id) {
         return (
-          <ul>
-            <li key={id}>{question.title}</li>
-            <li>{question.question}</li>
-          </ul>
+          <div className='card-sm' onClick={() => handleClick(question.id)}>
+            <div key={id}>{question.title}</div>
+            <div>{question.question}</div>
+          </div>
         )
       })}
     </>

@@ -21,7 +21,7 @@
 }
 
 .main-container {
-  @apply container px-6 mx-auto grid grid-cols-3 gap-3;
+  @apply container px-6 mx-auto grid grid-cols-4 gap-3;
 }
 
 .form-container {
@@ -43,4 +43,10 @@
 .card {
   @apply w-full rounded overflow-hidden shadow-lg bg-white flex;
   min-height: 400px;
+}
+
+.card-sm {
+  @apply w-full rounded overflow-hidden shadow-lg border border-gray-100 bg-white flex p-4 align-middle;
+  @apply hover:border-blue-900 hover:cursor-pointer hover:text-blue-800;
+  min-height: 50px;
 }
