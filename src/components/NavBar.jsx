@@ -4,9 +4,9 @@ function NavBar() {
    return (
       <nav class="nav">
          <div class="container flex flex-wrap justify-between items-center mx-auto">
-         <a href="https://flowbite.com/" class="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+         <a href="/" class="flex items-center">
+            <img src="/logo-braver.png" class="mr-3 h-6 sm:h-9" alt="Braver Logo" />
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Ask</span>
          </a>
 
          <div class="flex md:order-2">
@@ -40,15 +40,7 @@ function NavBar() {
                
                <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
-                     <a href="#" class="nav-link" aria-current="page">Home</a>
-                  </li>
-
-                  <li>
                      <a href="#" class="nav-link">About</a>
-                  </li>
-
-                  <li>
-                     <a href="#" class="nav-link">Services</a>
                   </li>
                </ul>
             </div>

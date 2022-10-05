@@ -49,6 +49,13 @@ function QuestionsShow() {
         </div>
       </div>
 
+      <div class="mt-6">
+        <textarea ref={refAnswer} className="text-area"/>
+      </div>
+      <div onClick={handleAnswer} className='button-answer'>
+        Answer
+      </div>
+
       {answers && answers.map(function(answer, id)
         {
           return (
@@ -58,13 +65,6 @@ function QuestionsShow() {
           )
         })
       }
-      
-      <div class="mt-6">
-        <textarea ref={refAnswer} className="text-area"/>
-      </div>
-      <div onClick={handleAnswer} className='button-answer'>
-        Answer
-      </div>
     </>
   )
 }

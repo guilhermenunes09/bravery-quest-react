@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        New Question
         <NavBar />
         <br />
           <div className="main-container">
