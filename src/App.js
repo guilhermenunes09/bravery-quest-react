@@ -23,8 +23,8 @@ function App() {
           <div className="main-container">
             <div className="col-span-full lg:col-span-4 flex justify-between cursor-pointer">
               { location.pathname !== "/" &&
-                <div onClick={handleGoBack}>
-                  <svg xmlns="http://www.w3.org/2/000/svg" transform="scale(-1 1)" width="24" height="24" viewBox="0 0 24 24"><path fill="gray" d="M22 12l-20 12 7.289-12-7.289-12z"/></svg>
+                <div className="arrow-icon" onClick={handleGoBack}>
+                  <svg xmlns="http://www.w3.org/2/000/svg" transform="scale(-1 1)" width="24" height="24" viewBox="0 0 24 24"><path d="M22 12l-20 12 7.289-12-7.289-12z"/></svg>
                 </div>
               }
               { location.pathname === "/" &&

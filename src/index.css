@@ -64,3 +64,7 @@ html {
   @apply hover:border-blue-900 hover:cursor-pointer hover:text-blue-800;
   min-height: 50px;
 }
+
+.arrow-icon {
+  @apply fill-gray-400 hover:fill-blue-800;
+}

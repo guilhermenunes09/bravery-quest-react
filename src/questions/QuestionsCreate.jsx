@@ -28,7 +28,7 @@ function QuestionsCreate() {
      <form className="form-container">
       <div className="">
         <div class="">
-          <input ref={refTitle} id="questions-title" type="text" placeholder="Title" className="input-field" />
+          <input ref={refTitle} id="questions-title" type="text" placeholder="Title" className="input-field" autoFocus />
         </div>
         <div class="">
           <textarea ref={refQuestion} className="text-area"/>
