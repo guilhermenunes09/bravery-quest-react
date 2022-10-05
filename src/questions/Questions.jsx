@@ -3,7 +3,7 @@ import { instance } from '../services/QuestionsService';
 import { useNavigate } from "react-router-dom";
 
 function Questions() {
-  const [questions, setQuestions] = useState(0);
+  const [questions, setQuestions] = useState();
   const navigate = useNavigate();
   
   useEffect(() => {

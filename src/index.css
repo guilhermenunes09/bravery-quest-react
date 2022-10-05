@@ -46,7 +46,7 @@
 
 .card {
   @apply w-full rounded overflow-hidden shadow-lg bg-white flex;
-  min-height: 400px;
+  min-height: 150px;
 }
 
 .card-answer {
