@@ -1,17 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
 
 function QuestionsShow() {
   const { questionId } = useParams();
   const [question, setQuestion] = useState({});
+  const [answers, setAnswers] = useState([]);
+
+  const refAnswer = useRef(null)
 
   useEffect(() => {
-    instance.get(`questions\\${questionId}`)
+    instance.get(`questions/${questionId}`)
     .then(res => {
-      setQuestion(res.data)
+      setQuestion(res.data);
+    })
+
+    instance.get(`questions/${questionId}/answers`)
+    .then(res => {
+      setAnswers(res.data);
     })
   }, []);
+
+  function handleAnswer() {
+    console.log('handle answer')
+    instance.post(`questions/${questionId}/answers`,
+    {
+      answers: {
+        answer: refAnswer.current.value
+      }
+    })
+    .then((res) => {
+      setAnswers([...answers, res.data])
+    });
+  }
+  
 
   return (
     <>
@@ -23,8 +45,25 @@ function QuestionsShow() {
           </p>
         </div>
         <div className='self-end px-6 pt-4 pb-'>
-          <span class="tag">#photography</span>
+          <span class="tag">#tags</span>
         </div>
+      </div>
+
+      {answers && answers.map(function(answer, id)
+        {
+          return (
+            <div className='card-answer mt-4'>
+              <div>{answer.answer}</div>
+            </div>
+          )
+        })
+      }
+      
+      <div class="mt-6">
+        <textarea ref={refAnswer} className="text-area"/>
+      </div>
+      <div onClick={handleAnswer} className='button-answer'>
+        Answer
       </div>
     </>
   )
