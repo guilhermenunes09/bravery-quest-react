@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll;
+}
+
 .nav {
   @apply bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900;
 }
