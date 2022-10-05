@@ -50,7 +50,7 @@ function QuestionsShow() {
       </div>
 
       <div class="mt-6">
-        <textarea ref={refAnswer} className="text-area"/>
+        <textarea ref={refAnswer} className="text-area" autoFocus/>
       </div>
       <div onClick={handleAnswer} className='button-answer'>
         Answer
