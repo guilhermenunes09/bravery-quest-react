@@ -47,6 +47,7 @@ function QuestionsShow() {
             <div dangerouslySetInnerHTML={{__html: question.question}} />
           </p>
         </div>
+
         <div className='self-end px-6 pt-4 pb-'>
           <span class="tag">#tags</span>
         </div>
@@ -55,9 +56,10 @@ function QuestionsShow() {
       <div class="mt-6">
         <TextEditor text={textData} />
       </div>
-      <div onClick={handleAnswer} className='button-answer'>
+
+      <button disabled={answer.length > 40 ? false : true} onClick={handleAnswer} className='button-answer'>
         Answer
-      </div>
+      </button>
 
       {answers && answers.map(function(answer, id)
         {

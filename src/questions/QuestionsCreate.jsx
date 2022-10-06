@@ -45,7 +45,7 @@ function QuestionsCreate() {
         </div>
       </div>
 
-      <button disabled={title.length < 15 ? true : false || question.length < 20 ? true : false} onClick={handleSave} class="form-button-right">
+      <button disabled={title.length < 15 ? true : false || question.length < 40 ? true : false} onClick={handleSave} class="form-button-right">
         Save
       </button>
     </form>

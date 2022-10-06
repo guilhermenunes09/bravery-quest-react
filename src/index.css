@@ -54,6 +54,7 @@ html {
 
 .button-answer {
   @apply bg-green-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded float-right cursor-pointer;
+  @apply disabled:bg-gray-400;
 }
 
 .tag {
