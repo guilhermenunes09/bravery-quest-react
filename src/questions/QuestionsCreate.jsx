@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { instance } from '../services/QuestionsService';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function QuestionsCreate() {
   const refTitle = useRef(null);
-  const refQuestion = useRef(null);
+  const [value, setValue] = useState('');
 
   const navigate = useNavigate();
 
@@ -13,7 +15,7 @@ function QuestionsCreate() {
     instance.post(`questions`, {
       questions: {
         title: refTitle.current.value,
-        question: refQuestion.current.value
+        question: value
       }
     })
     .then((response) => {
@@ -31,7 +33,7 @@ function QuestionsCreate() {
           <input ref={refTitle} id="questions-title" type="text" placeholder="Title" className="input-field" autoFocus />
         </div>
         <div class="">
-          <textarea ref={refQuestion} className="text-area"/>
+          <ReactQuill theme="snow" value={value} onChange={setValue} className="text-area-question" />
         </div>
       </div>
 

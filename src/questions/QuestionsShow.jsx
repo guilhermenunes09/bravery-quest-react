@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function QuestionsShow() {
   const { questionId } = useParams();
   const [question, setQuestion] = useState({});
   const [answers, setAnswers] = useState([]);
-
-  const refAnswer = useRef(null)
+  const [answer, setAnswer] = useState('');
 
   useEffect(() => {
     instance.get(`questions/${questionId}`)
@@ -26,7 +27,7 @@ function QuestionsShow() {
     instance.post(`questions/${questionId}/answers`,
     {
       answers: {
-        answer: refAnswer.current.value
+        answer: answer
       }
     })
     .then((res) => {
@@ -50,7 +51,7 @@ function QuestionsShow() {
       </div>
 
       <div class="mt-6">
-        <textarea ref={refAnswer} className="text-area" autoFocus/>
+        <ReactQuill theme="snow" value={answer} onChange={setAnswer} className="text-area-question" />
       </div>
       <div onClick={handleAnswer} className='button-answer'>
         Answer
