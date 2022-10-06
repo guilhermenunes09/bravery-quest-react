@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+
+import { TextEditor } from '../components/TextEditor';
 
 function QuestionsShow() {
   const { questionId } = useParams();
@@ -23,7 +23,6 @@ function QuestionsShow() {
   }, []);
 
   function handleAnswer() {
-    console.log('handle answer')
     instance.post(`questions/${questionId}/answers`,
     {
       answers: {
@@ -35,6 +34,9 @@ function QuestionsShow() {
     });
   }
   
+  function textData(data) {
+    setAnswer(data);
+  }
 
   return (
     <>
@@ -51,7 +53,7 @@ function QuestionsShow() {
       </div>
 
       <div class="mt-6">
-        <ReactQuill theme="snow" value={answer} onChange={setAnswer} className="text-area-question" />
+        <TextEditor text={textData} />
       </div>
       <div onClick={handleAnswer} className='button-answer'>
         Answer
