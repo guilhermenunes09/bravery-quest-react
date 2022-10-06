@@ -23,8 +23,7 @@ function Questions() {
       {questions && questions.map(function(question, id) {
         return (
           <div className='card-sm' onClick={() => handleClick(question.id)}>
-            <div key={id}>{question.title}</div>
-            <div>{question.question}</div>
+            <div className='link-index' key={id}>{question.title}</div>
           </div>
         )
       })}

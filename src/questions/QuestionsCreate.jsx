@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
 
 function QuestionsCreate() {
-  const refTitle = useRef(null);
+  const [title, setTitle] = useState('');
   const [question, setQuestion] = useState('');
 
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function QuestionsCreate() {
     e.preventDefault();
     instance.post(`questions`, {
       questions: {
-        title: refTitle.current.value,
+        title: title,
         question: question
       }
     })
@@ -21,6 +21,11 @@ function QuestionsCreate() {
       navigate(`/questions/${response.data.id}`);
 
     });
+  }
+
+  function handleTitleChange(e) {
+    console.log('check title', e.target.value);
+    setTitle(e.target.value);
   }
 
   function textData(data) {
@@ -32,14 +37,15 @@ function QuestionsCreate() {
      <form className="form-container">
       <div className="">
         <div class="">
-          <input ref={refTitle} id="questions-title" type="text" placeholder="Title" className="input-field" autoFocus />
+          <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="Title" className="input-field" autoFocus />
         </div>
+        
         <div class="">
           <TextEditor text={textData} />
         </div>
       </div>
 
-      <button onClick={handleSave} class="form-button-right">
+      <button disabled={title.length < 15 ? true : false || question.length < 20 ? true : false} onClick={handleSave} class="form-button-right">
         Save
       </button>
     </form>
