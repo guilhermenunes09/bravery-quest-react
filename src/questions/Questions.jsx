@@ -14,7 +14,6 @@ function Questions() {
   },[])
 
   function handleClick(questionId) {
-    console.log('what object', questionId)
     navigate(`/questions/${questionId}`)
   }
 

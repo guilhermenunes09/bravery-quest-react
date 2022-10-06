@@ -24,7 +24,6 @@ function QuestionsCreate() {
   }
 
   function handleTitleChange(e) {
-    console.log('check title', e.target.value);
     setTitle(e.target.value);
   }
 
