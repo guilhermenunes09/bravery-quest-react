@@ -21,10 +21,10 @@ function App() {
         <NavBar />
         <br />
           <div className="main-container">
-            <div className="col-span-full lg:col-span-8 flex justify-between cursor-pointer">
+            <div className="col-span-full lg:col-span-8 flex justify-between cursor-pointer mb-20">
               { location.pathname !== "/" &&
                 <div className="arrow-icon" onClick={handleGoBack}>
-                  <svg xmlns="http://www.w3.org/2/000/svg" transform="scale(-1 1)" width="24" height="24" viewBox="0 0 24 24"><path d="M22 12l-20 12 7.289-12-7.289-12z"/></svg>
+                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm-4.828 11.5l4.608 3.763-.679.737-6.101-5 6.112-5 .666.753-4.604 3.747h11.826v1h-11.828z"/></svg>
                 </div>
               }
               { location.pathname === "/" &&
@@ -52,7 +52,7 @@ function App() {
                 <Route path="/" exact element={<Questions/>} />
               </Routes>
             </div>
-            
+
             <div className="col-span-full lg:col-span-1">
               
             </div>

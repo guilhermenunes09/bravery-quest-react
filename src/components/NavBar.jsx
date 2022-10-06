@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
    return (
       <nav class="nav">
-         <div class="container flex flex-wrap justify-between items-center mx-auto">
-         <a href="https://flowbite.com/" class="flex items-center">
-            <img src="/logo-braver.png" class="mr-3 h-6 sm:h-9" alt="Braver Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Ask</span>
-         </a>
+         <div class="flex flex-wrap justify-between items-center mx-auto">
+         <Link to="/" class="flex items-center">
+            <img src="/logo-braver.png" class="h-6 sm:h-9 scale-75" alt="Braver Logo" />
+            <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white">Ask</span>
+         </Link>
 
          <div class="flex md:order-2">
             <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >

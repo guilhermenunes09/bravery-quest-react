@@ -42,7 +42,7 @@ function QuestionsShow() {
     <>
       <div className='card'>
         <div className='px-6 py-4'>
-          <div className='font-bold self-start text-xl mb-2 text-center'>{question.title}</div>
+          <div className='font-bold self-start text-xl mb-2 text-left'>{question.title}</div>
           <p className='text-gray-700 text-base'>
             <div dangerouslySetInnerHTML={{__html: question.question}} />
           </p>

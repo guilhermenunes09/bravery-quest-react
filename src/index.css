@@ -12,7 +12,7 @@ html {
 }
 
 .nav {
-  @apply bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900;
+  @apply bg-slate-100 border px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900;
 }
 
 .nav-link {
@@ -44,15 +44,15 @@ html {
 }
 
 .form-button-right {
-  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right;
+  @apply bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded float-right;
 }
 
 .button-new-question {
-  @apply bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right;
+  @apply bg-red-500 hover:bg-blue-700 text-white py-2 px-4 rounded float-right;
 }
 
 .button-answer {
-  @apply bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded float-right cursor-pointer;
+  @apply bg-green-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded float-right cursor-pointer;
 }
 
 .tag {
@@ -70,9 +70,9 @@ html {
 }
 
 .card-sm {
-  @apply w-full rounded overflow-hidden border border-gray-100 bg-white flex p-4 align-middle;
+  @apply w-full overflow-hidden border border-gray-100 bg-white flex p-4 align-middle;
   @apply hover:border-blue-900 hover:cursor-pointer hover:text-blue-800;
-  min-height: 50px;
+  height: 100px;
 }
 
 .arrow-icon {
