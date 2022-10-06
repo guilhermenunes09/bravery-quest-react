@@ -7,6 +7,10 @@ html {
   overflow-y: scroll;
 }
 
+.card a {
+  @apply underline text-blue-700;
+}
+
 .nav {
   @apply bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900;
 }
@@ -56,12 +60,12 @@ html {
 }
 
 .card {
-  @apply w-full rounded overflow-hidden shadow-lg bg-white flex;
+  @apply w-full rounded overflow-hidden shadow-lg bg-white;
   min-height: 150px;
 }
 
 .card-answer {
-  @apply w-full rounded overflow-hidden shadow-lg bg-white flex p-4;
+  @apply w-full rounded overflow-hidden shadow-lg bg-white p-4;
   min-height: 100px;
 }
 
@@ -73,4 +77,10 @@ html {
 
 .arrow-icon {
   @apply fill-gray-400 hover:fill-blue-800;
+}
+
+pre {
+  @apply bg-gray-200 px-4 my-4 rounded w-full;
+  display: block;
+  width: 100% !important;
 }

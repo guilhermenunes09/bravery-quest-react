@@ -44,7 +44,7 @@ function QuestionsShow() {
         <div className='px-6 py-4'>
           <div className='font-bold self-start text-xl mb-2 text-center'>{question.title}</div>
           <p className='text-gray-700 text-base'>
-            {question.question}
+            <div dangerouslySetInnerHTML={{__html: question.question}} />
           </p>
         </div>
         <div className='self-end px-6 pt-4 pb-'>
@@ -63,7 +63,7 @@ function QuestionsShow() {
         {
           return (
             <div className='card-answer mt-4'>
-              <div>{answer.answer}</div>
+              <div dangerouslySetInnerHTML={{__html: answer.answer}} />
             </div>
           )
         })
