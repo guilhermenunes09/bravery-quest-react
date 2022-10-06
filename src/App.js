@@ -21,7 +21,7 @@ function App() {
       <header className="App-header">
         <NavBar />
         <br />
-          <div className="main-container">
+          <div className={`main-container ${ location.pathname === '/login' ? "justify-items-center" : ""}`}>
             <div className="col-span-full lg:col-span-8 flex justify-between cursor-pointer mb-20">
               { location.pathname !== "/" && location.pathname !== "/login" &&
                 <div className="arrow-icon" onClick={handleGoBack}>
