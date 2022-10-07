@@ -12,7 +12,6 @@ function QuestionsCreate() {
   function handleSave(e) {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem('jetsky_token'));
-    console.log('check token', token)
     instance.post(`questions`, {
       questions: {
         title: title,
@@ -49,7 +48,7 @@ function QuestionsCreate() {
         </div>
       </div>
 
-      <button disabled={title.length < 15 ? true : false || question.length < 40 ? true : false} onClick={handleSave} class="form-button-right">
+      <button disabled={title.length < 5 ? true : false || question.length < 5 ? true : false} onClick={handleSave} class="form-button-right">
         Save
       </button>
     </form>

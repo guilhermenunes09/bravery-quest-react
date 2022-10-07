@@ -42,7 +42,13 @@ const TextEditor = (props) => {
     }
 
    return (
-      <ReactQuill theme="snow" value={value} onChange={handleChange} className="text-area-question" modules={modules} formats={formats} />
+      <>
+        <div className='container'>
+          <div className='text-area-container'>
+            <ReactQuill theme="snow" value={value} onChange={handleChange} className="text-area-question bg-white" modules={modules} formats={formats} />
+          </div>
+        </div>
+      </>
    )
 }
 

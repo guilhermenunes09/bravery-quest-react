@@ -30,10 +30,19 @@ html {
   padding-top: 10px;
 }
 
+.text-area-container {
+  
+}
+
+.ql-editor {
+  min-height: 200px;
+}
+
+.ql-container {
+  min-height: 200px;
+}
+
 .text-area-question {
-  @apply block w-full mb-14 h-10;
-  height: 200px;
-  padding-top: 10px;
 }
 
 .main-container {
@@ -58,7 +67,7 @@ html {
 }
 
 .button-answer {
-  @apply bg-green-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded float-right cursor-pointer;
+  @apply bg-green-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded cursor-pointer;
   @apply disabled:bg-gray-400;
 }
 
