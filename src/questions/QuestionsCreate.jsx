@@ -11,15 +11,20 @@ function QuestionsCreate() {
 
   function handleSave(e) {
     e.preventDefault();
+    const token = JSON.parse(localStorage.getItem('jetsky_token'));
+    console.log('check token', token)
     instance.post(`questions`, {
       questions: {
         title: title,
         question: question
       }
+    }, {
+      headers: {
+        authorization: `Bearer ${token.token}`
+      }
     })
     .then((response) => {
       navigate(`/questions/${response.data.id}`);
-
     });
   }
 

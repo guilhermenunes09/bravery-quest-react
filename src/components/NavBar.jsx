@@ -23,7 +23,6 @@ function NavBar() {
    },[location]);
 
    function logout() {
-      console.log('logout')
       setIsLoggedIn(false);
       setCurrentWarrior(0);
       localStorage.removeItem('warrior');

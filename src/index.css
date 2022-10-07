@@ -97,10 +97,7 @@ pre {
 
 .link-index {
   color: #1a0dab;
-  font-family: arial,sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  @apply hover:underline hover:cursor-pointer;
+  @apply text-lg hover:underline hover:cursor-pointer;
 }
 
 label {

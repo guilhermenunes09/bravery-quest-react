@@ -17,12 +17,18 @@ function Questions() {
     navigate(`/questions/${questionId}`)
   }
 
+  function stripTags(question) {
+    const text = question.replace(/(<([^>]+)>)/ig, '');
+    return text;
+  }
+
   return (
     <>  
       {questions && questions.map(function(question, id) {
         return (
           <div className='card-sm' onClick={() => handleClick(question.id)}>
             <div className='link-index' key={id}>{question.title}</div>
+            <div className='text-gray-400 text-sm'>{stripTags(question.question)}</div>
           </div>
         )
       })}
