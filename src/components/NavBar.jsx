@@ -1,22 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { instance } from '../services/QuestionsService';
 
 function NavBar() {
    const [isLoggedIn, setIsLoggedIn] = useState(false);
    const [currentWarrior, setCurrentWarrior] = useState(0);
+   const [jestkyToken, setJetskyToken] = useState('');
 
    const location = useLocation();
+   const navigate = useNavigate();
 
    useEffect(() => {
       const warrior = JSON.parse(localStorage.getItem('warrior'));
+      const token = JSON.parse(localStorage.getItem('jetsky_token'));
       if (warrior) {
          setIsLoggedIn(true);
          setCurrentWarrior(warrior)
+         setJetskyToken(token)
       } else {
-         setIsLoggedIn(false);
-         setCurrentWarrior(0);
+         logout();
       }
    },[location]);
+
+   function logout() {
+      console.log('logout')
+      setIsLoggedIn(false);
+      setCurrentWarrior(0);
+      localStorage.removeItem('warrior');
+      localStorage.removeItem('jetsky_token');
+   }
+
+   function handleLogout() {
+      instance.delete(`/api_keys/${jestkyToken.id}`, {
+         headers: {
+            authorization: `Bearer ${jestkyToken.token}`
+         }
+      })
+      .finally(() => {
+         logout();
+         navigate(`/`);
+      })
+   }
 
    return (
       <nav class="nav">
@@ -60,8 +84,11 @@ function NavBar() {
                      <a href="#" class="nav-link">About</a>
                   </li>
                   <li>
-                     { isLoggedIn && 
-                        <div>{currentWarrior.email}</div>
+                     { isLoggedIn &&
+                        <>
+                           <div>{currentWarrior.email}</div>
+                           <div onClick={handleLogout} className='nav-link cursor-pointer'>Logout</div>
+                        </>
                      }
                      { !isLoggedIn && 
                         <Link to="/login" class="nav-link">Login</Link>
