@@ -1,7 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 function NavBar() {
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [currentWarrior, setCurrentWarrior] = useState(0);
+
+   const location = useLocation();
+
+   useEffect(() => {
+      const warrior = JSON.parse(localStorage.getItem('warrior'));
+      if (warrior) {
+         setIsLoggedIn(true);
+         setCurrentWarrior(warrior)
+      } else {
+         setIsLoggedIn(false);
+         setCurrentWarrior(0);
+      }
+   },[location]);
+
    return (
       <nav class="nav">
          <div class="flex flex-wrap justify-between items-center mx-auto">
@@ -44,7 +60,12 @@ function NavBar() {
                      <a href="#" class="nav-link">About</a>
                   </li>
                   <li>
-                     <Link to="/login" class="nav-link">Login</Link>
+                     { isLoggedIn && 
+                        <div>{currentWarrior.email}</div>
+                     }
+                     { !isLoggedIn && 
+                        <Link to="/login" class="nav-link">Login</Link>
+                     }
                   </li>
                </ul>
             </div>
