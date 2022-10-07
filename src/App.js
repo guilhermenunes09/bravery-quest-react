@@ -6,6 +6,7 @@ import { QuestionsShow } from "./questions/QuestionsShow"
 import { QuestionsCreate } from "./questions/QuestionsCreate";
 import { Questions } from "./questions/Questions"
 import { Login } from "./authentication/Login"
+import { SignUp } from "./authentication/SignUp"
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                 <Route path="/questions/new" exact element={<QuestionsCreate />} />
                 <Route path="/questions" exact element={<Questions/>} />
                 <Route path="/login" exact element={<Login/>} />
+                <Route path="/sign-up" exact element={<SignUp/>} />
                 <Route path="/" exact element={<Questions/>} />
               </Routes>
             </div>

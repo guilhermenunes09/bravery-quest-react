@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { instance } from '../services/QuestionsService';
 import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
@@ -8,6 +8,13 @@ function QuestionsCreate() {
   const [question, setQuestion] = useState('');
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('warrior'));
+    if (!user) {
+      navigate('/login');
+    }
+  },[]);
 
   function handleSave(e) {
     e.preventDefault();

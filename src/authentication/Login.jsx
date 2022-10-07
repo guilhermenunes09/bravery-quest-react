@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { instance } from '../services/QuestionsService';
 
 function Login() {
@@ -63,6 +63,9 @@ function Login() {
                <button onClick={handleSubmit} class="form-button-login">
                   Login
                </button>
+               <div className='text-center mt-3'>
+                  <Link to='/sign-up' className='link'>I don't have an account yet</Link>
+               </div>
             </form>
          </div>
       </>

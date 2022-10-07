@@ -29,6 +29,18 @@ function Questions() {
           Questions
         </h1>
       }
+
+      { questions && questions.length === 0 &&
+        <>
+          <div className='card text-center'>
+            <h1 className='text-blue-600 ml-1 mb-4 text-[27px] block'>
+              Land on sight!
+            </h1>
+            There is no questions yet, but you can be the first!
+          </div>
+        </>
+      }
+
       {questions && questions.map(function(question, id) {
         return (
           <div className='card-sm' onClick={() => handleClick(question.id)}>
