@@ -52,7 +52,7 @@ function QuestionsShow() {
         <div className='px-6 py-4'>
           <div className='font-bold self-start text-xl text-left'>{question.title}</div>
           <div className='text-xs text-gray-400 mb-4'>
-            By {question.author && question.author.email} • {question.updated_at}
+            By {question.author && question.author.email} • {question.created_at}
           </div>
           
           <p className='text-gray-700 text-base'>
@@ -81,16 +81,18 @@ function QuestionsShow() {
       }
 
       <div className='grid'>
-        <h1 className='ml-1 text-[27px] block'>
-          Answers
-        </h1>
+        { answers.length > 0 &&
+          <h1 className='ml-1 mt-10 text-[27px] block'>
+            Answers
+          </h1>
+        }
 
         {answers && answers.map(function(__answer, id)
           {
             return (
               <div className='card-answer mt-4'>
                 <div className='text-xs text-gray-400 mb-4'>
-                  By {__answer.author && __answer.author.email} • {question.updated_at}
+                  By {__answer.author && __answer.author.email} • {question.created_at}
                 </div>
                 <div kkey={`show-${id}`} dangerouslySetInnerHTML={{__html: __answer.answer}} />
               </div>
