@@ -36,22 +36,30 @@ function QuestionsCreate() {
   }
   
   return (
-    <>
-     <form className="form-container">
-      <div className="">
-        <div class="">
-          <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="Title" className="input-field" autoFocus />
+    <> 
+    <div className='card'>
+      <form>
+        <div className="">
+          <h1 className='ml-1 mb-4 text-[27px] block'>
+            New Question
+          </h1>
+          <div class="">
+            <label>Title</label>
+            <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="How to center a div vertically..." className="input-field" autoFocus />
+          </div>
+          
+          <label className='mt-3'>Question</label>
+          <div class="">
+            <TextEditor text={textData} />
+            <div className='under-input-label'>Describe your issue, the more details the better.</div>
+          </div>
         </div>
-        
-        <div class="">
-          <TextEditor text={textData} />
-        </div>
-      </div>
 
-      <button disabled={title.length < 5 ? true : false || question.length < 5 ? true : false} onClick={handleSave} class="form-button-right">
-        Save
-      </button>
-    </form>
+        <button disabled={title.length < 5 ? true : false || question.length < 5 ? true : false} onClick={handleSave} class="form-button-right">
+          Save
+        </button>
+      </form>
+    </div>
     </>
   )
 }

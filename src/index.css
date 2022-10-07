@@ -46,7 +46,7 @@ html {
 }
 
 .main-container {
-  @apply container px-6 mx-auto grid grid-cols-8 gap-3 mt-20;
+  @apply container px-6 mx-auto grid grid-cols-8 gap-1 mt-2;
 }
 
 .form-container {
@@ -76,7 +76,7 @@ html {
 }
 
 .card {
-  @apply w-full rounded overflow-hidden bg-white border;
+  @apply w-full rounded overflow-hidden bg-white border p-4;
   min-height: 150px;
 }
 
@@ -110,5 +110,9 @@ pre {
 }
 
 label {
-  @apply text-sm font-medium text-gray-900 block mb-2;
+  @apply text-sm font-medium text-gray-900 block mb-2 pl-1;
+}
+
+.under-input-label {
+  @apply text-sm text-gray-400;
 }

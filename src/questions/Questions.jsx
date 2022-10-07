@@ -23,7 +23,12 @@ function Questions() {
   }
 
   return (
-    <>  
+    <> 
+      { questions &&  questions.length > 0 &&
+        <h1 className='ml-1 mb-4 text-[27px] block'>
+          Questions
+        </h1>
+      }
       {questions && questions.map(function(question, id) {
         return (
           <div className='card-sm' onClick={() => handleClick(question.id)}>
