@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { instance } from '../services/QuestionsService';
 import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
-
+ 
 function QuestionsCreate() {
   const [title, setTitle] = useState('');
   const [question, setQuestion] = useState('');
