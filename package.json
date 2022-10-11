@@ -21,6 +21,7 @@
     "serve": "^14.0.1",
     "web-vitals": "^3.0.2"
   },
+  "proxy": "https://bravery-quest-react.herokuapp.com/",
   "scripts": {
     "start": "serve -s build",
     "dev": "react-scripts start",
