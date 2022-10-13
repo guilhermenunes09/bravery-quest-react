@@ -14,7 +14,15 @@ html {
 }
 
 .nav {
-  @apply bg-slate-100 border px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900;
+  @apply px-2 sm:px-4 py-2.5 rounded bg-gray-900 text-white;
+}
+
+.nav .nav-link {
+  color: rgba(255, 255, 255, 0.418) !important;
+}
+
+.nav .nav-link:hover {
+  color: white !important;
 }
 
 .nav-link {
@@ -91,8 +99,8 @@ html {
 }
 
 .card-sm {
-  @apply w-full overflow-hidden border border-gray-100 bg-white p-4 align-middle;
-  height: 100px;
+  @apply w-full overflow-hidden border border-gray-200 bg-white p-4 align-middle;
+  min-height: 100px;
 }
 
 .arrow-icon {

@@ -58,7 +58,7 @@ function Login() {
                   
                   <div class="">
                      <label>Your password</label>
-                     <input onChange={handleChangePassword} id="user-password" type="password" placeholder="••••••••" className={`input-field  ${showInvalidMessage ? 'border-red-600': ''}`} autoFocus />
+                     <input onChange={handleChangePassword} id="user-password" type="password" placeholder="••••••••" className={`input-field  ${showInvalidMessage ? 'border-red-600': ''}`} />
                   </div>
                </div>
 

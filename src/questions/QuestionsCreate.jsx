@@ -52,7 +52,7 @@ function QuestionsCreate() {
           </h1>
           <div class="">
             <label>Title</label>
-            <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="How to center a div vertically..." className="input-field" autoFocus />
+            <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="How to center a div vertically..." className="input-field" />
           </div>
           
           <label className='mt-3'>Question</label>

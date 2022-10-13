@@ -10,6 +10,7 @@ function Questions() {
     instance.get(`questions`)
     .then(res => {
       setQuestions(res.data)
+      console.log('check data', res)
     })
   },[])
 
@@ -44,8 +45,8 @@ function Questions() {
       {questions && questions.map(function(question, identifier) {
         return (
           <div className='card-sm mb-2' onClick={() => handleClick(question.identifier)}>
-            <div className='link-index' key={identifier}>{question.title}</div>
-            <div className='text-gray-400 text-sm'>{stripTags(question.question_truncated)}</div>
+            <div><span className='link-index' key={identifier}>{question.title}</span><span className='text-sm text-gray-500'> → {question.author && question.author.nickname} • { question.created_at }</span></div>
+            <div className='text-gray-500 text-sm'>{stripTags(question.question_truncated)}</div>
           </div>
         )
       })}
