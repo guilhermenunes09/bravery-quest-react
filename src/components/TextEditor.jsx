@@ -36,6 +36,9 @@ const TextEditor = (props) => {
       'code-block'
     ];
 
+    const styleTest = {
+    }
+
     function handleChange(value) {
       setValue(value);
       props.text(value);
@@ -45,7 +48,7 @@ const TextEditor = (props) => {
       <>
         <div className='container'>
           <div className='text-area-container'>
-            <ReactQuill theme="snow" value={value} onChange={handleChange} className="text-area-question bg-white" modules={modules} formats={formats} />
+            <ReactQuill style={styleTest} theme="snow" value={value} onChange={handleChange} className="text-area-question bg-white" modules={modules} formats={formats} />
           </div>
         </div>
       </>

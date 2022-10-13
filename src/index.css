@@ -120,3 +120,17 @@ label {
 .under-input-label {
   @apply text-sm text-gray-400;
 }
+
+.hljs-string {
+  color: black !important;
+}
+
+.hljs-title {
+  color: blue !important;
+}
+
+.ql-snow .ql-editor pre.ql-syntax {
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
+  color: black !important;
+  overflow: visible;
+}
