@@ -45,7 +45,7 @@ function NavBar() {
       <nav class="nav">
          <div class="flex flex-wrap justify-between items-center mx-auto">
          <Link to="/" class="flex items-center">
-            <img src="/logo-braver.png" class="h-6 sm:h-9 scale-75" alt="Braver Logo" />
+            <img src="/logo-braver.png" class="h-6 sm:h-9 scale-90 " alt="Braver Logo" />
             <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white">Ask</span>
          </Link>
 
@@ -78,7 +78,7 @@ function NavBar() {
                <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
                </div>
                
-               <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+               <ul class="flex flex-row p-1 mt-4 justify-between rounded-lg border md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
                      { !isLoggedIn &&
                         <>
@@ -89,7 +89,7 @@ function NavBar() {
                   <li>
                      { isLoggedIn &&
                         <>
-                           <div>{currentWarrior.email}</div>
+                           <div className='text-blue-600'>{currentWarrior.nickname}</div>
                            <div onClick={handleLogout} className='nav-link cursor-pointer'>Logout</div>
                         </>
                      }
