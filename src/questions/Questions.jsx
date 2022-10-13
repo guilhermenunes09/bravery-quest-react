@@ -45,7 +45,7 @@ function Questions() {
         return (
           <div className='card-sm' onClick={() => handleClick(question.id)}>
             <div className='link-index' key={id}>{question.title}</div>
-            <div className='text-gray-400 text-sm'>{stripTags(question.question)}</div>
+            <div className='text-gray-400 text-sm'>{stripTags(question.question_truncated)}</div>
           </div>
         )
       })}
