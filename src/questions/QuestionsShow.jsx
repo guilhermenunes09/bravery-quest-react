@@ -50,13 +50,13 @@ function QuestionsShow() {
     <>
       <div className='card'>
         <div className='px-6 py-4'>
-          <div className='font-bold self-start text-xl text-left'>{question.title}</div>
+          <div className='font-bold self-start text-xl text-left'>{question && question.title}</div>
           <div className='text-xs text-gray-400 mb-4'>
-            By {question.author && question.author.nickname} • {question.created_at}
+            By {question && question.author && question.author.nickname} • {question && question.created_at}
           </div>
           
           <p className='text-gray-700 text-base'>
-            <div dangerouslySetInnerHTML={{__html: question.question}} />
+            <div dangerouslySetInnerHTML={{__html: question && question.question}} />
           </p>
         </div>
 
