@@ -41,10 +41,10 @@ function Questions() {
         </>
       }
 
-      {questions && questions.map(function(question, id) {
+      {questions && questions.map(function(question, identifier) {
         return (
-          <div className='card-sm' onClick={() => handleClick(question.id)}>
-            <div className='link-index' key={id}>{question.title}</div>
+          <div className='card-sm mb-2' onClick={() => handleClick(question.identifier)}>
+            <div className='link-index' key={identifier}>{question.title}</div>
             <div className='text-gray-400 text-sm'>{stripTags(question.question_truncated)}</div>
           </div>
         )

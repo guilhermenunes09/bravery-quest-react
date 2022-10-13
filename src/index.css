@@ -6,6 +6,7 @@ html {
   overflow: -moz-scrollbars-vertical; 
   overflow-y: scroll;
   background-image: radial-gradient(rgb(227, 229, 235) 0.25px, rgb(252, 252, 252) 0.15px); background-size: 2.8px 2.8px;
+  padding-bottom: 50px;
 }
 
 .card a {

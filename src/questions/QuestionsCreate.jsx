@@ -30,7 +30,7 @@ function QuestionsCreate() {
       }
     })
     .then((response) => {
-      navigate(`/questions/${response.data.id}`);
+      navigate(`/questions/${response.data.identifier}`);
     });
   }
 

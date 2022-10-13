@@ -87,14 +87,14 @@ function QuestionsShow() {
           </h1>
         }
 
-        {answers && answers.map(function(__answer, id)
+        {answers && answers.map(function(__answer, identifier)
           {
             return (
               <div className='card-answer mt-4'>
                 <div className='text-xs text-gray-400 mb-4'>
                   By {__answer.author && __answer.author.email} • {question.created_at}
                 </div>
-                <div kkey={`show-${id}`} dangerouslySetInnerHTML={{__html: __answer.answer}} />
+                <div kkey={`show-${identifier}`} dangerouslySetInnerHTML={{__html: __answer.answer}} />
               </div>
             )
           })
