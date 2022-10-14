@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
 
 function Login() {
@@ -8,6 +9,7 @@ function Login() {
    const [showInvalidMessage, setShowInvalidMessage] = useState(false);
 
    const navigate = useNavigate();
+   const { goback } = useParams();
    
    function handleChangeEmail(e) {
       setEmail(e.target.value);
@@ -37,7 +39,12 @@ function Login() {
       .then((res) => {
          localStorage.setItem('jetsky_token', JSON.stringify(res.data.api_key));
          localStorage.setItem('warrior', JSON.stringify(res.data.warrior));
-         navigate(`/`);
+         
+         if(goback) {
+            navigate(-1)
+         } else {
+            navigate(`/`);
+         }
       })
       .catch((err) => {
          setShowInvalidMessage(true)
@@ -49,6 +56,7 @@ function Login() {
       <> 
          <div className='card-password'>
             <form className="form-container">
+               
                <div className='font-medium mb-6'>Login to our platform</div>
                <div className="block">
                   <div class="">

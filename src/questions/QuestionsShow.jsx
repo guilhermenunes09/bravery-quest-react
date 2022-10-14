@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
 
@@ -10,8 +11,16 @@ function QuestionsShow() {
   const [answers, setAnswers] = useState([]);
   const [answer, setAnswer] = useState('');
   const [isEditorVisible, setIsEditorVisible] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const warrior = JSON.parse(localStorage.getItem('warrior'));
+    if (warrior) {
+      console.log('loggedin')
+      setIsLoggedIn(true);
+    }
+
     instance.get(`questions/${questionId}`)
     .then(res => {
       setQuestion(res.data);
@@ -41,6 +50,11 @@ function QuestionsShow() {
       setAnswers([...answers, res.data])
     });
   }
+
+  function handleLoginToAnswer(e) {
+    e.preventDefault();
+    navigate('/login/true');
+  }
   
   function textData(data) {
     setAnswer(data);
@@ -65,17 +79,26 @@ function QuestionsShow() {
         </div>
       </div>
 
-      { isEditorVisible &&
+      { isEditorVisible && 
         <>
-          <div class="mt-6">
-            <TextEditor text={textData} />
-          </div>
-        
+          { isLoggedIn &&
+            <div class="mt-6">
+              <TextEditor text={textData} />
+            </div>
+          }
 
-          <div className='flex justify-end'>
-            <button disabled={answer.length > 5 ? false : true} onClick={handleAnswer} className='button-answer'>
-              Answer
-            </button>
+          <div className='flex items-center justify-end'>
+            <div className='mr-2 text-gray-500'>Can you help { question && question.author && question.author.nickname }?</div>
+            { isLoggedIn &&
+              <button disabled={answer.length > 5 && isLoggedIn ? false : true} onClick={handleAnswer} className='button-answer'>
+                Answer
+              </button>
+            }
+            { !isLoggedIn &&
+              <button onClick={handleLoginToAnswer} className='button-answer'>
+                Log in to answer
+              </button>
+            }
           </div>
         </>
       }

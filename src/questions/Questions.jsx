@@ -10,7 +10,6 @@ function Questions() {
     instance.get(`questions`)
     .then(res => {
       setQuestions(res.data)
-      console.log('check data', res)
     })
   },[])
 
