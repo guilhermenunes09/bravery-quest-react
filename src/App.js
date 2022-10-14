@@ -7,6 +7,7 @@ import { QuestionsCreate } from "./questions/QuestionsCreate";
 import { Questions } from "./questions/Questions"
 import { Login } from "./authentication/Login"
 import { SignUp } from "./authentication/SignUp"
+import { NotFoundPage } from "./misc/NotFoundPage";
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
               <div className="self-right cursor-pointer">
                 { location.pathname !== "/questions/new" && location.pathname !== "/login" && location.pathname !== "/login/true" && location.pathname !== "/sign-up" &&
                   <Link to="/questions/new" class="button-new-question">
-                    New Question
+                    Ask any Question
                   </Link>
                 }
               </div>
@@ -65,6 +66,7 @@ function App() {
                 <Route path="/login/:goback" element={<Login/>} />
                 <Route path="/sign-up" exact element={<SignUp/>} />
                 <Route path="/" exact element={<Questions/>} />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
 
