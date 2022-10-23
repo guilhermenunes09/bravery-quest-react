@@ -55,7 +55,9 @@ html {
 }
 
 .main-container {
-  @apply container px-6 mx-auto grid grid-cols-8 gap-1 mt-2;
+  @apply container px-2 mx-auto grid grid-cols-8 gap-1 mt-2;
+  @apply md:px-4; 
+  @apply lg:px-6;
 }
 
 .form-container {
@@ -141,4 +143,27 @@ label {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
   color: black !important;
   overflow: visible;
+}
+
+.header-menu-card {
+  width: 30px;
+  height: 30px;
+  @apply text-gray-500 text-lg hover:text-gray-900 cursor-pointer flex justify-center rounded hover:bg-blue-50;
+}
+
+.sidebar {  
+  @apply border shadow-2xl;
+  position: absolute;
+  
+  top: 60px !important;
+}
+
+.sidebar-opened {
+  right: 0;
+  transition: .3s right ease-out;
+}
+
+.sidebar-closed {
+  right: -200px;
+  transition: .3s right ease-in;
 }

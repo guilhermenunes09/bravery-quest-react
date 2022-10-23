@@ -4,6 +4,8 @@ import { useParams } from 'react-router';
 import { instance } from '../services/QuestionsService';
 
 import { TextEditor } from '../components/TextEditor';
+import { FaBeer } from 'react-icons/fa';
+import { BsThreeDots } from 'react-icons/bs';
 
 function QuestionsShow() {
   const { questionId } = useParams();
@@ -64,25 +66,42 @@ function QuestionsShow() {
     <>
       <div className='card'>
         <div className='px-6 py-4'>
-          <div className='font-bold self-start text-xl text-left'>{question && question.title}</div>
-          <div className='text-xs text-gray-400 mb-4'>
-            By {question && question.author && question.author.nickname} • {question && question.created_at}
+          <div className='card-header flex justify-between'>
+            <div className='group-1'>
+              <div className='font-bold self-start text-xl text-left'>{question && question.title}</div>
+              <div className='text-xs text-gray-400 mb-4'>
+                By {question && question.author && question.author.nickname} • {question && question.created_at}
+              </div>
+            </div>
+            
+            <div className='group-2'>
+              <div className="header-menu-card">
+                <BsThreeDots className='self-center' />
+              </div>
+              <div id="dropdown-header">
+                <ul>
+                  <lli></lli>
+                  <lli></lli>
+                </ul>
+              </div>
+            </div>
           </div>
-          
           <p className='text-gray-700 text-base'>
             <div dangerouslySetInnerHTML={{__html: question && question.question}} />
           </p>
         </div>
 
-        <div className='self-end px-6 pt-4 pb-'>
-          <span class="tag">#tags</span>
+        <div className='self-end px-6 pt-4'>
+          {question.tags && question.tags.map((tag) => {
+            return <span className='tag'>{tag}</span>
+          })}
         </div>
       </div>
 
       { isEditorVisible && 
         <>
           { isLoggedIn &&
-            <div class="mt-6">
+            <div className="mt-6">
               <TextEditor text={textData} />
             </div>
           }
@@ -104,7 +123,7 @@ function QuestionsShow() {
       }
 
       <div className='grid'>
-        { answers.length > 0 &&
+        { answers && answers.length > 0 &&
           <h1 className='ml-1 mt-10 text-[27px] block'>
             Answers
           </h1>
