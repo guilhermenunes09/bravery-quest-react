@@ -2,11 +2,12 @@ import React from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 
 import { NavBar } from "./components/NavBar";
-import { QuestionsShow } from "./questions/QuestionsShow"
+import { QuestionsShow } from "./questions/QuestionsShow";
 import { QuestionsCreate } from "./questions/QuestionsCreate";
-import { Questions } from "./questions/Questions"
-import { Login } from "./authentication/Login"
-import { SignUp } from "./authentication/SignUp"
+import { Questions } from "./questions/Questions";
+import { Login } from "./authentication/Login";
+import { SignUp } from "./authentication/SignUp";
+import { MyAccount } from "./account/MyAccount";
 import { NotFoundPage } from "./misc/NotFoundPage";
 
 
@@ -65,6 +66,7 @@ function App() {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/login/:goback" element={<Login/>} />
                 <Route path="/sign-up" exact element={<SignUp/>} />
+                <Route path="/my-account" exact element={<MyAccount/>} />
                 <Route path="/" exact element={<Questions/>} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

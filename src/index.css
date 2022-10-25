@@ -82,6 +82,11 @@ html {
   @apply disabled:bg-gray-400;
 }
 
+.button-change-image {
+  @apply border hover:bg-gray-700 text-black hover:text-white py-2 px-4 my-4 rounded cursor-pointer;
+  @apply disabled:bg-gray-400;
+}
+
 .tag {
   @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2;
 }
@@ -154,8 +159,8 @@ label {
 .sidebar {  
   @apply border shadow-2xl;
   position: absolute;
-  
-  top: 60px !important;
+  top: 0px !important;
+  pointer-events: fill;
 }
 
 .sidebar-opened {
@@ -166,4 +171,32 @@ label {
 .sidebar-closed {
   right: -200px;
   transition: .3s right ease-in;
+}
+
+.sidebar-wrapper {
+  position: absolute;
+  width: 200px;
+  height: 100vh;
+  overflow: hidden;
+  right: 0;
+  top: 66px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.avatar-template {
+  background-color: green;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 50px;
+  color: white;
+  overflow: hidden;
+}
+
+.input-change-image {
+  @apply text-center button-change-image;
 }
