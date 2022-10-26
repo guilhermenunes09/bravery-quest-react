@@ -45,6 +45,7 @@ html {
 
 .ql-editor {
   min-height: 200px;
+  font-size:medium;
 }
 
 .ql-container {
