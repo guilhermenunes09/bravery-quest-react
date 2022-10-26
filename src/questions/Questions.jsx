@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { instance } from '../services/QuestionsService';
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Questions() {
-  const [myObj, setMyObj] = useSearchParams({a: 1})
   const [questions, setQuestions] = useState();
   const navigate = useNavigate();
   
   useEffect(() => {
-    myObj.set("b", 2);
-    setMyObj(myObj)
     instance.get(`questions`)
     .then(res => {
       setQuestions(res.data)
@@ -27,7 +24,6 @@ function Questions() {
 
   return (
     <> 
-    {myObj.a}
       { questions &&  questions.length > 0 &&
         <h1 className='ml-1 mb-4 text-[27px] block'>
           Questions
