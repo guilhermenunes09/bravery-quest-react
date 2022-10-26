@@ -37,7 +37,6 @@ html {
   @apply block w-full text-base mb-2 border h-10 outline-none focus-visible:border-2 focus-visible:border-blue-900 pl-3;
   height: 200px;
   padding-top: 10px;
-  font-size: large;
 }
 
 .text-area-container {
