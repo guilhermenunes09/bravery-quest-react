@@ -90,7 +90,10 @@ function NavBar() {
                <aside className={`sidebar ${ sidebarOpen ? 'sidebar-opened' : 'sidebar-closed' } x-64`}>
                   <div className='overflow-y-auto py-4 px-3 bg-gray-50 rounded'>
                      <ul className='space-y-2'>
-                        <li>
+                        <li className='sidebar-button-close' onClick={() => setSidebarOpen(false)}>
+                           <img className='close-icon' fill={'currentColor'} width={20} height={20} src={require('../assets/close-button-svgrepo-com.svg').default} />
+                        </li>
+                        <li className='pt-6'>
                            <Link to='/my-account' onClick={() => setSidebarOpen(false)} className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg'>
                               <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
                               <span class="ml-3">My Account</span>
