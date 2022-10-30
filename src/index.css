@@ -14,11 +14,11 @@ html {
 }
 
 .nav .nav-link {
-  color: rgba(255, 255, 255, 0.418) !important;
+  color: rgba(68, 64, 64, 0.705) !important;
 }
 
 .nav .nav-link:hover {
-  color: white !important;
+  color: black !important;
 }
 
 .nav-link {
