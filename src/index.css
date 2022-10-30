@@ -9,12 +9,8 @@ html {
   padding-bottom: 50px;
 }
 
-.card a {
-  @apply underline text-blue-700;
-}
-
 .nav {
-  @apply px-2 sm:px-4 py-2.5 rounded bg-gray-900 text-white;
+  @apply px-2 sm:px-4 py-2.5 rounded bg-white text-black shadow;
 }
 
 .nav .nav-link {
@@ -53,12 +49,6 @@ html {
 }
 
 .text-area-question {
-}
-
-.main-container {
-  @apply container px-2 mx-auto grid grid-cols-8 gap-1 mt-2;
-  @apply md:px-4; 
-  @apply lg:px-6;
 }
 
 .form-container {
@@ -106,11 +96,6 @@ html {
   min-height: 100px;
 }
 
-.card-sm {
-  @apply w-full overflow-hidden border border-gray-200 bg-white p-4 align-middle;
-  min-height: 100px;
-}
-
 .arrow-icon {
   @apply fill-gray-400 hover:fill-blue-800;
 }
@@ -122,11 +107,6 @@ pre {
 
 .link {
   @apply text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500;
-}
-
-.link-index {
-  color: #1a0dab;
-  @apply text-lg hover:underline hover:cursor-pointer;
 }
 
 label {
@@ -158,10 +138,12 @@ label {
 }
 
 .sidebar {  
-  @apply border shadow-2xl;
-  position: absolute;
+  @apply border shadow-2xl bg-white;
+  position: fixed;
   top: 0px !important;
   pointer-events: fill;
+  height: 100vh;
+  width: 50vh;
 }
 
 .sidebar-opened {
@@ -170,7 +152,7 @@ label {
 }
 
 .sidebar-closed {
-  right: -200px;
+  right: -50vh;
   transition: .3s right ease-in;
 }
 
@@ -183,6 +165,15 @@ label {
   top: 66px;
   pointer-events: none;
   z-index: 1;
+}
+
+.sidebar-button-close {
+  @apply float-right mb-3 cursor-pointer opacity-80;
+  opacity: .5;
+}
+
+.sidebar-button-close:hover {
+  opacity: 1;
 }
 
 .avatar-template {
