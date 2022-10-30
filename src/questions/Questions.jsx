@@ -32,7 +32,7 @@ function Questions() {
 
       { questions && questions.length === 0 &&
         <>
-          <div className='card text-center'>
+          <div className='text-center'>
             <h1 className='text-blue-600 ml-1 mb-4 text-[27px] block'>
               Land on sight!
             </h1>
