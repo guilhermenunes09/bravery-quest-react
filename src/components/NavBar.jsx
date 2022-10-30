@@ -112,7 +112,7 @@ function NavBar() {
                </aside>
             </div>
          
-            <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-search">
+            <div class="justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-search">
                <div class="relative mt-3">
                
                <div class="hidden flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -122,7 +122,7 @@ function NavBar() {
                <input type="text" id="search-navbar" class="hidden block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
                </div>
                
-               <ul class="flex flex-row p-1 mt-4 justify-between rounded-lg border md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+               <ul class="flex flex-row p-1 mt-4 justify-between rounded-lg space-x-8 mt-0 text-sm font-medium border-0">
                   <li>
                      { !isLoggedIn &&
                         <>

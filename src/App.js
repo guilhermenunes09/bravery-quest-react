@@ -25,7 +25,7 @@ function App() {
         <NavBar />
       </header>
 
-      <div>
+      <div className="main-container">
         <div className="flex justify-between cursor-pointer mb-3">
           { location.pathname !== "/" && location.pathname !== "/login" && location.pathname !== "/login/true" && location.pathname !== "/sign-up" &&
             <div className="arrow-icon" onClick={handleGoBack}>
@@ -45,8 +45,8 @@ function App() {
             }
           </div>
         </div>
-        <div className="flex">
-          <div className="w-10 flex-auto p-3">
+        <div className="md:flex">
+          <div className="md:w-10 md:flex-auto p-3">
             <div className="card-menu-category hidden">
               REACT
             </div>
@@ -66,7 +66,7 @@ function App() {
             </Routes>
           </div>
 
-          <div className="w-10 flex-auto p-3">
+          <div className="md:w-10 flex-auto p-3">
             
           </div>
         </div>
