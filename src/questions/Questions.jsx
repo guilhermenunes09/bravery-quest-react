@@ -33,7 +33,7 @@ function Questions() {
       { questions && questions.length === 0 &&
         <>
           <div className='text-center'>
-            <h1 className='text-blue-600 ml-1 mb-4 text-[27px] block'>
+            <h1 className='title-no-questions-yet'>
               Land on sight!
             </h1>
             There is no questions yet, but you can be the first!
@@ -43,8 +43,13 @@ function Questions() {
 
       {questions && questions.map(function(question, identifier) {
         return (
-          <div className='card-sm mb-2' onClick={() => handleClick(question.identifier)}>
-            <div><span className='link-index' key={identifier}>{question.title}</span><span className='text-sm text-gray-500'> → {question.author && question.author.nickname} • { question.created_at }</span></div>
+          <div className='card-sm' onClick={() => handleClick(question.identifier)}>
+            <div className='flex items-center mb-2'>
+              <div style={{width: '40px', height: '40px'}} className='avatar-template'></div> 
+              <span className='font-semibold text-sm'>{question.author && question.author.nickname} </span>
+              <span className='text-sm text-gray-500'> →  { question.created_at }</span>
+            </div>
+            <div><span className='link-index' key={identifier}>{question.title}</span></div>
             <div className='text-gray-500 text-sm'>{stripTags(question.question_truncated)}</div>
           </div>
         )
