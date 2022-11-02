@@ -40,7 +40,7 @@ function App() {
           <div className="self-right cursor-pointer">
             { location.pathname !== "/questions/new" && location.pathname !== "/login" && location.pathname !== "/login/true" && location.pathname !== "/sign-up" &&
               <Link to="/questions/new" class="button-new-question">
-                Ask any Question
+                Ask a Question
               </Link>
             }
           </div>
