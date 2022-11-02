@@ -113,6 +113,7 @@ function QuestionsShow() {
                 Answer
               </button>
             }
+            
             { !isLoggedIn &&
               <button onClick={handleLoginToAnswer} className='button-answer'>
                 Log in to answer
@@ -134,7 +135,8 @@ function QuestionsShow() {
             return (
               <div className='card-answer mt-4'>
                 <div className='text-xs text-gray-400 mb-4'>
-                  By {__answer.author && __answer.author.email} • {question.created_at}
+                  { Object.keys(__answer) }
+                  By {__answer.author && __answer.author.nickname} • {question.created_at}
                 </div>
                 <div kkey={`show-${identifier}`} dangerouslySetInnerHTML={{__html: __answer.answer}} />
               </div>

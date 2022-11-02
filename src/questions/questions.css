@@ -1,0 +1,21 @@
+.card a {
+   @apply underline text-blue-700;
+ }
+
+.link-index {
+   color: #000000;
+   @apply text-lg hover:underline hover:cursor-pointer font-semibold;
+ }
+
+ .card-sm {
+   @apply cursor-pointer w-full overflow-hidden border border-gray-200 bg-white p-2 pl-4 align-middle  mb-2;
+   height: 150px;
+ }
+
+ .card-sm:hover {
+   @apply bg-gray-100;
+ }
+
+ .title-no-questions-yet {
+   @apply text-blue-600 ml-1 mb-4 text-[27px] block;
+ }
