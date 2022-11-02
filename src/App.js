@@ -47,7 +47,7 @@ function App() {
         </div>
         <div className="md:flex">
           <div className="md:w-10 md:flex-auto p-3">
-            <div className="card-menu-category hidden">
+            <div className="card-menu-category hidden"> 
               REACT
             </div>
           </div>
