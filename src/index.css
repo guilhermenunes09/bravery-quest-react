@@ -86,18 +86,8 @@ html {
   @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2;
 }
 
-.card {
-  @apply w-full rounded overflow-hidden bg-white border p-4;
-  min-height: 150px;
-}
-
 .card-password {
   @apply w-96 rounded overflow-hidden bg-white border;
-}
-
-.card-answer {
-  @apply w-full rounded overflow-hidden bg-white p-4 border;
-  min-height: 100px;
 }
 
 .arrow-icon {
@@ -133,12 +123,6 @@ label {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
   color: black !important;
   overflow: visible;
-}
-
-.header-menu-card {
-  width: 30px;
-  height: 30px;
-  @apply text-gray-500 text-lg hover:text-gray-900 cursor-pointer flex justify-center rounded hover:bg-blue-50;
 }
 
 .sidebar {  

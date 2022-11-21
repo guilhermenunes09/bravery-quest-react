@@ -40,19 +40,19 @@ function App() {
           <div className="self-right cursor-pointer">
             { location.pathname !== "/questions/new" && location.pathname !== "/login" && location.pathname !== "/login/true" && location.pathname !== "/sign-up" &&
               <Link to="/questions/new" class="button-new-question">
-                Ask a Question
+                New Question
               </Link>
             }
           </div>
         </div>
-        <div className="md:flex">
-          <div className="md:w-10 md:flex-auto p-3">
+        <div className="flex">
+          <div className="md:grow-0">
             <div className="card-menu-category hidden"> 
               REACT
             </div>
           </div>
 
-          <div className={ location.pathname !== '/login' && location.pathname !== '/sign-up' ? `grow  p-3` : `p-3`}>
+          <div className={ location.pathname !== '/login' && location.pathname !== '/sign-up' ? `md:grow` : ``}>
             <Routes>
               <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
               <Route path="/questions/new" exact element={<QuestionsCreate />} />
@@ -66,7 +66,7 @@ function App() {
             </Routes>
           </div>
 
-          <div className="md:w-10 flex-auto p-3">
+          <div className="md:grow-0">
             
           </div>
         </div>

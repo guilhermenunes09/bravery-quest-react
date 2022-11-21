@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './App.css';
 import './index.css';
 import './questions/questions.css';
+import './questions/questions_show.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';

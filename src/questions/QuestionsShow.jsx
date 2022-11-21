@@ -64,11 +64,11 @@ function QuestionsShow() {
 
   return (
     <>
-      <div className='card'>
+      <div>
         <div className='px-6 py-4'>
-          <div className='card-header flex justify-between'>
+          <div className='flex justify-between'>
             <div className='group-1'>
-              <div className='font-bold self-start text-xl text-left'>{question && question.title}</div>
+              <div className='question-title'>React-Redux Bindings</div>
               <div className='text-xs text-gray-400 mb-4'>
                 By {question && question.author && question.author.nickname} • {question && question.created_at}
               </div>
@@ -86,7 +86,7 @@ function QuestionsShow() {
               </div>
             </div>
           </div>
-          <p className='text-gray-700 text-base'>
+          <p className='question-explain'>
             <div dangerouslySetInnerHTML={{__html: question && question.question}} />
           </p>
         </div>
