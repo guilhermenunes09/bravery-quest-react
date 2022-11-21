@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { instance } from '../services/QuestionsService';
 
 function MyAccount () {
-
-   const [currentUser, setCurrentUser] = useState(0)
    const [file, setFile] = useState();
+   const [user, setUser] = useState();
 
    useEffect(() => {
-      setCurrentUser(JSON.parse(localStorage.getItem('warrior')))
+      const userId = JSON.parse(localStorage.getItem('warrior')).id
+
+      const getUser = (id) => {
+         instance.get(`users/${id}`)
+            .then(res => {
+               setUser(res.data);
+            })
+      }
+      
+      getUser(userId);
 
    },[]);
 
@@ -17,27 +26,24 @@ function MyAccount () {
 
    return (
       <>
-         <div className='grid grid-cols-2 gap-3'>
-            <div className='m-auto'>
-               
-               <div className='avatar-template'>
-                  { file &&
-                     <img src={file} />
-                  }
-                  { !file &&
-                     <>G</>
-                  }
-               </div>
-               
-               <div className='text-center mt-2 text-lg'>
-                  {currentUser.nickname}
+         <div className='grid md:grid-cols-2 gap-3 place-items-center'>
+            <div className='md:border-r-2'>
+               <div className='flex justify-center'>
+                  <div className='avatar-template'>
+                     <img src={`${process.env.REACT_APP_LOCALHOST}/${user && user.avatar}`} />
+                  </div>
                </div>
 
-               <input onChange={handleChange} type='file' className='input-change-image' />
-            
-            
+               <div>
+                  <input onChange={handleChange} type='file' className='input-change-image' />
+               </div>
             </div>
-            <div></div>
+            <div className='text-center'>
+               <div className='flex-row'>
+                  <span className='nickname-title'>{user && user.nickname}</span>
+                  <div className='small-text'><small>{user && user.email}</small></div>
+               </div>
+            </div>
          </div>
       </>
    )

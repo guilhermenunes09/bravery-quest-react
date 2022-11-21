@@ -133,7 +133,9 @@ function NavBar() {
                   <li>
                      { isLoggedIn &&
                         <>
-                           <div className='text-blue-600'>{currentWarrior.nickname}</div>
+                           <Link to='/my-account'>
+                              <div className='text-blue-600 cursor-pointer'>{currentWarrior.nickname}</div>
+                           </Link>
                         </>
                      }
                      { !isLoggedIn && 

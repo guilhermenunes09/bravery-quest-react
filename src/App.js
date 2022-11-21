@@ -45,7 +45,7 @@ function App() {
             }
           </div>
         </div>
-        <div className="flex">
+        <div className="flex justify-center">
           <div className="md:grow-0">
             <div className="card-menu-category hidden"> 
               REACT

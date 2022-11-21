@@ -45,8 +45,10 @@ function Questions() {
         return (
           <div className='card-sm' onClick={() => handleClick(question.identifier)}>
             <div className='flex items-center mb-2'>
-              <div style={{width: '40px', height: '40px'}} className='avatar-template'></div> 
-              <span className='font-semibold text-sm'>{question.author && question.author.nickname} </span>
+              <div style={{width: '40px', height: '40px'}} className='avatar-template'>
+                <img src={`${process.env.REACT_APP_LOCALHOST}/${question.author.avatar}`} />
+              </div> 
+              <span className='font-semibold text-sm ml-2'>{question.author && question.author.nickname} </span>
               <span className='text-sm text-gray-500'> →  { question.created_at }</span>
             </div>
             <div><span className='link-index' key={identifier}>{question.title}</span></div>

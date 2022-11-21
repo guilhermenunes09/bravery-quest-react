@@ -1,0 +1,30 @@
+.nickname-title {
+   font-size: larger;
+}
+
+.small-text {
+   color: black;
+   opacity: .6;
+}
+
+.avatar-template {
+   background-color: rgb(220, 228, 235);
+   width: 150px;
+   height: 150px;
+   border-radius: 360px;
+   text-align: center;
+   vertical-align: middle;
+   display: table-cell;
+   color: white;
+   overflow: hidden;
+ }
+
+ .button-change-image {
+   @apply hover:bg-gray-700 text-black hover:text-white py-2 px-4 my-4 rounded cursor-pointer;
+   @apply disabled:bg-gray-400;
+   @apply p-4;
+ }
+
+ .input-change-image {
+   @apply text-center button-change-image;
+ }
