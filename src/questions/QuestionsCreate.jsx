@@ -19,6 +19,7 @@ function QuestionsCreate() {
   function handleSave(e) {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem('jetsky_token'));
+    console.log('what is instance', instance)
     instance.post(`questions`, {
       questions: {
         title: title,

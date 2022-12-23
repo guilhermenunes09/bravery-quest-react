@@ -8,8 +8,9 @@
  }
 
  .card-sm {
-   @apply cursor-pointer w-full overflow-hidden border border-gray-200 bg-white p-2 pl-4 align-middle  mb-2;
+   @apply cursor-pointer w-full overflow-hidden border border-gray-200 bg-white p-2 pl-4 align-middle mb-2;
    height: 150px;
+   max-width: 900px;
  }
 
  .card-sm:hover {

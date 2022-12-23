@@ -52,7 +52,7 @@ function App() {
             </div>
           </div>
 
-          <div className={ location.pathname !== '/login' && location.pathname !== '/sign-up' ? `md:grow` : ``}>
+          <div className={ location.pathname !== '/login' && location.pathname !== '/sign-up' ? `grow content-center` : ``}>
             <Routes>
               <Route path="/questions/:questionId" exact element={<QuestionsShow/>} />
               <Route path="/questions/new" exact element={<QuestionsCreate />} />
