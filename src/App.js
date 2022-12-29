@@ -9,6 +9,7 @@ import { Login } from "./authentication/Login";
 import { SignUp } from "./authentication/SignUp";
 import { MyAccount } from "./account/MyAccount";
 import { NotFoundPage } from "./misc/NotFoundPage";
+import LoadingBar from "./components/LoadingBar";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header mb-3">
         <NavBar />
+        <LoadingBar />
       </header>
 
       <div className="main-container">

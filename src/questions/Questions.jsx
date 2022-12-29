@@ -24,7 +24,6 @@ function Questions() {
 
   return (
 
-
     <> 
       { questions &&  questions.length > 0 &&
         <h1 className='ml-1 mb-4 text-[27px] block'>

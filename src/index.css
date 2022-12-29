@@ -11,8 +11,12 @@ html {
   font-weight: 600;
 }
 
+nav {
+  height: 600 !important;
+}
+
 .nav {
-  @apply px-2 sm:px-4 py-2.5 rounded bg-white text-black shadow;
+  @apply px-2 sm:px-4 py-2.5 rounded bg-white text-black shadow h-[4rem];
 }
 
 .nav .nav-link {
@@ -84,7 +88,7 @@ html {
 }
 
 .card-password {
-  @apply w-96 rounded overflow-hidden bg-white border;
+  @apply w-96 rounded overflow-hidden bg-white border mt-20;
 }
 
 .arrow-icon {
@@ -159,4 +163,34 @@ label {
 
 .sidebar-button-close:hover {
   opacity: 1;
+}
+
+
+
+.loading-bar {
+  content: ""; /* Add an empty content */
+  position: fixed; /* Set the position to absolute */
+  top: 0;
+  left: 0; /* Set the left position to 0 */
+  width: 100%; /* Set the width to 100% */
+  height: 5px; /* Set the height to 4px */
+  background: linear-gradient(to right, #3498db, #3498db, rgb(255, 13, 13), #3498db, #2980b9); /* Set the gradient background */
+  animation: loading 2s linear infinite; /* Animate the gradient background with a duration of 1 second and an infinite loop */
+  background-size: 200% 100%; 
+  overflow: hidden;
+  z-index: 2; /* Set the z-index to 2 */
+}
+
+
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0; /* Set the initial position at the right, but beyond the visible area */
+  }
+  50% {
+    background-position: 100% 0; /* Set the position at the middle (right side) */
+  }
+  100% {
+    background-position: 0 0; /* Set the final position at the left */
+  }
 }
