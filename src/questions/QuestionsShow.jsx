@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
 
 import { TextEditor } from '../components/TextEditor';
 import { FaBeer } from 'react-icons/fa';

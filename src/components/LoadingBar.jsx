@@ -1,11 +1,36 @@
-import { useRecoilState } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { loadingState } from "../store/recoil";
+import { instance } from "../services/axios";
 
 const LoadingBar = () => {
-  const [loading, setLoading] = useRecoilState(loadingState);
+  const [loading, setLoadingTemp] = useRecoilState(loadingState);
+
+  const setLoading = useSetRecoilState(loadingState);
+
+
+  useEffect(() => {
+    const requestInterceptor = instance.interceptors.request.use(config => {
+      console.log('requested');
+      setLoading(true);
+      return config;
+    });
+
+    const responseInterceptor = instance.interceptors.response.use(response => {
+      setLoading(false);
+      return response;
+    });
+
+    return () => {
+      instance.interceptors.request.eject(requestInterceptor);
+      instance.interceptors.response.eject(responseInterceptor);
+    }
+  }, []);
+
 
   return (
     <>
+    Loading: {loading.toString()}
       <div className={ loading ? 'loading-bar' : ''}>
         
       </div>

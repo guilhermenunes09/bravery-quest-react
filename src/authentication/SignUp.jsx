@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
 import { Login } from "./Login";
 
 function SignUp() {
@@ -58,23 +58,23 @@ function SignUp() {
             <form className="form-container">
                <div className='font-medium mb-6'>Sign Up</div>
                <div className="block">
-                  <div class="">
+                  <div className="">
                      <label>Your name or nickname</label>
                      <input onChange={handleChangeNickname} id="questions-title" type="text" placeholder="maverick" className="input-field" autoFocus />
                   </div>
                   
-                  <div class="">
+                  <div className="">
                      <label>Your email</label>
                      <input onChange={handleChangeEmail} id="questions-title" type="text" placeholder="name@mail.com" className="input-field" autoFocus />
                   </div>
                   
-                  <div class="">
+                  <div className="">
                      <label>Password</label>
                      <input onChange={handleChangePassword} id="user-password" type="password" placeholder="••••••••" className="input-field" autoFocus />
                   </div>
                </div>
             
-               <button onClick={handleSubmit} class="form-button-login">
+               <button onClick={handleSubmit} className="form-button-login">
                   Sing Up
                </button>
             </form>

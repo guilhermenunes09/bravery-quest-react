@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
 import { useNavigate } from "react-router-dom";
 
 function Questions() {

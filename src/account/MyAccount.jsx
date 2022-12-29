@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
 
 function MyAccount () {
    const [file, setFile] = useState();

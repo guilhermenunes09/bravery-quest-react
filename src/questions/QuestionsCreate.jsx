@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
 import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
  
@@ -51,19 +51,19 @@ function QuestionsCreate() {
           <h1 className='ml-1 mb-4 text-[27px] block'>
             New Question
           </h1>
-          <div class="">
+          <div className="">
             <label>Title</label>
             <input onChange={handleTitleChange} id="questions-title" type="text" placeholder="How to center a div vertically..." className="input-field" />
           </div>
           
           <label className='mt-3'>Question</label>
-          <div class="">
+          <div className="">
             <TextEditor text={textData} />
             <div className='under-input-label'>Describe your issue, the more details the better.</div>
           </div>
         </div>
 
-        <button disabled={title.length < 5 ? true : false || question.length < 5 ? true : false} onClick={handleSave} class="form-button-right">
+        <button disabled={title.length < 5 ? true : false || question.length < 5 ? true : false} onClick={handleSave} className="form-button-right">
           Save
         </button>
       </form>

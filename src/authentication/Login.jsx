@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { instance } from '../services/QuestionsService';
+import { instance } from '../services/axios';
+import { useRecoilState } from 'recoil';
+import { loadingState } from '../store/recoil';
 
 function Login() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [showInvalidMessage, setShowInvalidMessage] = useState(false);
+   const [loading, setLoading] = useRecoilState(loadingState);
 
    const navigate = useNavigate();
    const { goback } = useParams();
@@ -56,33 +59,35 @@ function Login() {
       <> 
          <div className='card-password'>
             <form className="form-container">
+
+               Loading: {loading.toString()}
                
                <div className='font-medium mb-6'>Login to our platform</div>
                <div className="block">
-                  <div class="">
+                  <div className="">
                      <label>Your email</label>
                      <input onChange={handleChangeEmail} id="questions-title" type="text" placeholder="name@mail.com" className={`input-field ${showInvalidMessage ? 'border-red-600': ''}`} autoFocus />
                   </div>
                   
-                  <div class="">
+                  <div className="">
                      <label>Your password</label>
                      <input onChange={handleChangePassword} id="user-password" type="password" placeholder="••••••••" className={`input-field  ${showInvalidMessage ? 'border-red-600': ''}`} />
                   </div>
                </div>
 
-               <div class="flex items-start">
-                  <div class="flex items-start">
-                     <div class="flex items-center h-5">
-                        <input id="remember" aria-describedby="remember" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="" />
+               <div className="flex items-start">
+                  <div className="flex items-start">
+                     <div className="flex items-center h-5">
+                        <input id="remember" aria-describedby="remember" type="checkbox" className="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="" />
                      </div>
-                     <div class="text-sm ml-1">
-                        <label for="remember" class="font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                     <div className="text-sm ml-1">
+                        <label for="remember" className="font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                      </div>
                   </div>
-                  <a href="#" class="text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500">Lost Password?</a>
+                  <a href="#" className="text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500">Lost Password?</a>
                </div>
             
-               <button onClick={handleSubmit} class="form-button-login">
+               <button onClick={handleSubmit} className="form-button-login">
                   Login
                </button>
                { showInvalidMessage && 
