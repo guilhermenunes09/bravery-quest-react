@@ -11,7 +11,6 @@ const LoadingBar = () => {
 
   useEffect(() => {
     const requestInterceptor = instance.interceptors.request.use(config => {
-      console.log('requested');
       setLoading(true);
       return config;
     });
@@ -30,7 +29,6 @@ const LoadingBar = () => {
 
   return (
     <>
-    Loading: {loading.toString()}
       <div className={ loading ? 'loading-bar' : ''}>
         
       </div>

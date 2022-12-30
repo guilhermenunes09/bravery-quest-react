@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { instance } from '../services/axios';
 import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
- 
+import { useRecoilState } from 'recoil';
+import { loadingState } from '../store/recoil'; 
+
 function QuestionsCreate() {
+  const [loading, setLoading] = useRecoilState(loadingState);
   const [title, setTitle] = useState('');
   const [question, setQuestion] = useState('');
 
@@ -27,12 +30,16 @@ function QuestionsCreate() {
       }
     }, {
       headers: {
-        authorization: `Bearer ${token.token}`
+        authorization: `Bearer ${token && token.token}`
       }
     })
     .then((response) => {
       navigate(`/questions/${response.data.identifier}`);
-    });
+    }).catch((err) => {
+      if(err.response.status === 401) {
+        navigate('/login/true');
+      }
+    }).finally(() => setLoading(false));
   }
 
   function handleTitleChange(e) {

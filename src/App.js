@@ -18,10 +18,6 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  
-
-  
-
   function handleGoBack() {
     navigate(-1)
   }
