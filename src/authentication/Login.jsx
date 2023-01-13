@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { instance } from '../services/axios';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { loadingState } from '../store/recoil';
 
 function Login() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [showInvalidMessage, setShowInvalidMessage] = useState(false);
-   const [loading, setLoading] = useRecoilState(loadingState);
+   const loading = useRecoilValue(loadingState);
 
    const navigate = useNavigate();
    const { goback } = useParams();
@@ -84,7 +84,7 @@ function Login() {
                         <label for="remember" className="font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                      </div>
                   </div>
-                  <a href="#" className="text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500">Lost Password?</a>
+                  <Link className="text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500">Lost Password?</Link>
                </div>
             
                <button onClick={handleSubmit} className="form-button-login">

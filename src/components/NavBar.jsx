@@ -94,7 +94,7 @@ function NavBar() {
                   <div className='overflow-y-auto py-4 px-3 bg-gray-50 rounded'>
                      <ul className='space-y-2'>
                         <li className='sidebar-button-close' onClick={() => setSidebarOpen(false)}>
-                           <img className='close-icon' fill={'currentColor'} width={20} height={20} src={require('../assets/close-button-svgrepo-com.svg').default} />
+                           <img alt="close" className='close-icon' fill={'currentColor'} width={20} height={20} src={require('../assets/close-button-svgrepo-com.svg').default} />
                         </li>
                         <li className='pt-6'>
                            <Link to='/my-account' onClick={() => setSidebarOpen(false)} className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg'>
@@ -104,7 +104,7 @@ function NavBar() {
                         </li>
                         <li>
                            { isLoggedIn && 
-                              <Link onClick={handleLogout} className='nav-link cursor-pointer' href='#' className='flex items-center p-2 text-base font-normal text-gray-900 group-hover:text-gray-900 rounded-lg'>
+                              <Link onClick={handleLogout} className='nav-link cursor-pointer'>
                               <svg aria-hidden="true" className='w-6 h-6 text-gray-500 transition duration-75' fill="currentColor"><path d="M16 9v-4l8 7-8 7v-4h-8v-6h8zm-2 10v-.083c-1.178.685-2.542 1.083-4 1.083-4.411 0-8-3.589-8-8s3.589-8 8-8c1.458 0 2.822.398 4 1.083v-2.245c-1.226-.536-2.577-.838-4-.838-5.522 0-10 4.477-10 10s4.478 10 10 10c1.423 0 2.774-.302 4-.838v-2.162z"/></svg>
                                  <span className="ml-3">Logout</span>
                               </Link>

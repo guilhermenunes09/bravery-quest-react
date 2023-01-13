@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
-
 import { NavBar } from "./components/NavBar";
 import { QuestionsShow } from "./questions/QuestionsShow";
 import { QuestionsCreate } from "./questions/QuestionsCreate";
@@ -10,9 +9,6 @@ import { SignUp } from "./authentication/SignUp";
 import { MyAccount } from "./account/MyAccount";
 import { NotFoundPage } from "./misc/NotFoundPage";
 import LoadingBar from "./components/LoadingBar";
-import { instance } from "./services/axios";
-import { loadingState } from "./store/recoil";
-import { useRecoilState, useSetRecoilState } from "recoil";
 
 function App() {
   const location = useLocation();

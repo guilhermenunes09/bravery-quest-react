@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import { instance } from '../services/axios';
 
 import { TextEditor } from '../components/TextEditor';
-import { FaBeer } from 'react-icons/fa';
 import { BsThreeDots } from 'react-icons/bs';
 
 function QuestionsShow() {
@@ -19,7 +18,6 @@ function QuestionsShow() {
   useEffect(() => {
     const warrior = JSON.parse(localStorage.getItem('warrior'));
     if (warrior) {
-      console.log('loggedin')
       setIsLoggedIn(true);
     }
 
@@ -32,7 +30,7 @@ function QuestionsShow() {
     .then(res => {
       setAnswers(res.data);
     })
-  }, []);
+  }, [questionId]);
 
   function handleAnswer(e) {
     e.preventDefault();
@@ -69,7 +67,7 @@ function QuestionsShow() {
           <div className='flex justify-between'>
             <div className='group-1'>
               <div style={{width: '60px', height: '60px'}} className='avatar-template'>
-                <img src={`${process.env.REACT_APP_LOCALHOST}/${question.author.avatar}`} />
+                <img alt="avatar" src={`${process.env.REACT_APP_LOCALHOST}/${question.author.avatar}`} />
               </div>
               <div className='question-title'>{ question && question.title }</div>
               <div className='text-xs text-gray-400 mb-4'>

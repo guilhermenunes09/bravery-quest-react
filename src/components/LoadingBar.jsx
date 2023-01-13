@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState, useRecoilValue } from "recoil";
 import { loadingState } from "../store/recoil";
 import { instance } from "../services/axios";
 
 const LoadingBar = () => {
-  const [loading, setLoadingTemp] = useRecoilState(loadingState);
+  const loading = useRecoilValue(loadingState);
 
   const setLoading = useSetRecoilState(loadingState);
 
@@ -24,7 +24,7 @@ const LoadingBar = () => {
       instance.interceptors.request.eject(requestInterceptor);
       instance.interceptors.response.eject(responseInterceptor);
     }
-  }, []);
+  }, [setLoading]);
 
 
   return (

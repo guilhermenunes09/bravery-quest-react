@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { instance } from '../services/axios';
-import { Login } from "./Login";
+
 
 function SignUp() {
-
    const [nickname, setNickname] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
-
    const navigate = useNavigate();
-
 
    function handleSubmit(e) {
       e.preventDefault();

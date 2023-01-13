@@ -11,10 +11,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
 import {
   RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
 } from 'recoil';
 
 

@@ -45,7 +45,7 @@ function MyAccount () {
             <div className='md:border-r-2'>
                <div className='flex justify-center'>
                   <div className='avatar-template'>
-                     <img src={ file || `${process.env.REACT_APP_LOCALHOST}/${user && user.avatar}`} />
+                     <img alt="avatar" src={ file || `${process.env.REACT_APP_LOCALHOST}/${user && user.avatar}`} />
                   </div>
                </div>
 

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { instance } from '../services/axios';
 import { useNavigate } from 'react-router-dom';
 import { TextEditor } from '../components/TextEditor';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { loadingState } from '../store/recoil'; 
 
 function QuestionsCreate() {
-  const [loading, setLoading] = useRecoilState(loadingState);
+  const setLoading = useSetRecoilState(loadingState);
   const [title, setTitle] = useState('');
   const [question, setQuestion] = useState('');
 
@@ -17,7 +17,7 @@ function QuestionsCreate() {
     if (!user) {
       navigate('/login');
     }
-  },[]);
+  },[navigate]);
 
   function handleSave(e) {
     e.preventDefault();
