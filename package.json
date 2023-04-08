@@ -25,7 +25,6 @@
     "spinners-react": "^1.0.7",
     "web-vitals": "^3.0.2"
   },
-  "proxy": "http://localhost:3001/",
   "scripts": {
     "start": "serve -s build",
     "dev": "react-scripts start",
