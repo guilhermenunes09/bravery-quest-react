@@ -25,7 +25,6 @@ function App() {
         <LoadingBar />
       </header>
 
-
       <div className="main-container">
         <div className="flex justify-between cursor-pointer mb-3">
           { location.pathname !== "/" && location.pathname !== "/login" && location.pathname !== "/login/true" && location.pathname !== "/sign-up" &&
