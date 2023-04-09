@@ -67,7 +67,7 @@ function QuestionsShow() {
           <div className='flex justify-between'>
             <div className='group-1'>
               <div style={{width: '60px', height: '60px'}} className='avatar-template'>
-                <img alt="avatar" src={`${process.env.REACT_APP_LOCALHOST}/${question.author.avatar}`} />
+                <img alt="avatar" src={`${process.env.REACT_APP_LOCALHOST}/${question && question.author && question.author.avatar}`} />
               </div>
               <div className='question-title'>{ question && question.title }</div>
               <div className='text-xs text-gray-400 mb-4'>
